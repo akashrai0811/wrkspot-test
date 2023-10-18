@@ -7,3 +7,15 @@ services:
       - 'POSTGRES_USER=myuser'
     ports:
       - '5432'
+
+  spring-boot-app:
+    image: demo
+    container_name: demo-container
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/your_database_name
+      SPRING_DATASOURCE_USERNAME: your_username
+      SPRING_DATASOURCE_PASSWORD: your_password
