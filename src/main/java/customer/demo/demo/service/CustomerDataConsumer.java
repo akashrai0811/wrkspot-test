@@ -1,10 +1,15 @@
-import org.apache.kafka.clients.consumer.*;
+package customer.demo.demo.service;
+
+import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.apache.kafka.clients.consumer.ConsumerRecords;
+import org.apache.kafka.clients.consumer.KafkaConsumer;
+
 import java.time.Duration;
 import java.util.Collections;
 import java.util.Properties;
 
 public class CustomerDataConsumer {
-    public static void main(String[] args) {
+    public  void kafkaConsumer() {
         Properties props = new Properties();
         props.put("bootstrap.servers", "localhost:9092");
         props.put("group.id", "customer-consumer-group");
